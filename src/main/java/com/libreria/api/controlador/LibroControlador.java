@@ -18,7 +18,7 @@ import com.libreria.api.servicio.LibroServicio;
 import com.libreria.api.modelo.Libro;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PATCH,RequestMethod.DELETE})
 public class LibroControlador {
 
     @Autowired
