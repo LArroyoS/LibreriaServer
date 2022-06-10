@@ -3,6 +3,7 @@ package com.libreria.api.servicio;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ public class LibroServicio {
         return (List<Libro>)libroRepositorio.findAll();
     }
 
+    public Optional<Libro> obtenerLibrosPorId(Long id){
+        return libroRepositorio.findById(id);
+    }
     public List<Libro> obtenerLibrosPorTitulo(String titulo){
         return (List<Libro>)libroRepositorio.findByTitulo(titulo);
     }

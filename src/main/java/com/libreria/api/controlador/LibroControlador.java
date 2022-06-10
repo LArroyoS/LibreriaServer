@@ -2,6 +2,7 @@ package com.libreria.api.controlador;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,6 +35,10 @@ public class LibroControlador {
         return libroServicio.crearLibro(libro);
     }
     
+    @GetMapping("/Libro/{id}")
+    public Optional<Libro> obtenerLibrosPorId(@PathVariable("id") Long id){
+        return libroServicio.obtenerLibrosPorId(id);
+    }
     @GetMapping("/Libros/buscar/titulo/{titulo}")
     public List<Libro> obtenerLibrosPorTitulo(@PathVariable("titulo") String titulo){
         return libroServicio.obtenerLibrosPorTitulo(titulo);
