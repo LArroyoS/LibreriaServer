@@ -83,4 +83,9 @@ public class LibroControlador {
         return libroServicio.eliminarLibro(id);
     }
 
+    @PostMapping("/Libros/Eliminar")
+    public List<Long> eliminarLibros(@RequestBody List<Long> ids){
+        return libroServicio.eliminarLibros(ids);
+    }
+
 }

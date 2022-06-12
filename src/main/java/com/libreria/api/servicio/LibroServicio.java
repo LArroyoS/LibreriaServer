@@ -87,12 +87,14 @@ public class LibroServicio {
         }
     }
 
-    public boolean eliminarLibros(List<Long> ids){
-        boolean completado = true;
+    public List<Long> eliminarLibros(List<Long> ids){
+        List<Long> error = new ArrayList<Long>();
         for (Long id : ids) {
-            completado = (eliminarLibro(id)==false)? false: completado;
+            if(!eliminarLibro(id)){
+                error.add(id);
+            }
         }
-        return completado;
+        return error.isEmpty()? null:error;
     }
 
 }

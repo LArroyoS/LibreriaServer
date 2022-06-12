@@ -18,7 +18,7 @@ public class Libro {
     @Column(unique = true, nullable = false)
     private Long id;
     private String titulo;
-    private int editorial;
+    private String editorial;
     private int genero;
     private String autor;
     private int idioma;
@@ -37,10 +37,10 @@ public class Libro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public int getEditorial() {
+    public String getEditorial() {
         return editorial;
     }
-    public void setEditorial(int editorial) {
+    public void setEditorial(String editorial) {
         this.editorial = editorial;
     }
     public int getGenero() {
